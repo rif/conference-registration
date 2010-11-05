@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}User {{ object.get_full_name }} {% endblock %}
+
+{% block content %}
+{% include "auth/detail_data.html" %}
+<h5><b>Shopping cart</b></h5>
+{% with object.shoppingcart as sc %}
+<ul>
+<li>ICSM: {{sc.ICSM}}</li>
+<li>PROMISE: {{sc.PROMISE}}</li>
+<li>SCAM: {{sc.SCAM}}</li>
+<li>WSE: {{sc.WSE}}</li>
+<li>tutorial refactoring for parallelism: {{sc.tutorial_refactoring_for_parallelism}}</li>
+<li>tutorial migrating software testing to the cloud: {{sc.tutorial_migrating_software_testing_to_the_cloud}}</li>
+<li>tutorial teaching undergraduate software engineering: {{sc.tutorial_teaching_undergraduate_software_engineering}}</li>
+<li>tutorial the licensing challenge: {{sc.tutorial_the_licensing_challenge}}</li>
+<li>ICSM banquet: {{sc.extra_ICSM_banquet}}</li>
+<li>ICSM reception: {{sc.extra_ICSM_reception}}</li>
+<li>ICSM winetasting: {{sc.extra_ICSM_winetasting}}</li>
+<li>ICSM proceedings: {{sc.extra_ICSM_proceedings}}</li>
+<li>PROMISE SCAM dinner: {{sc.extra_PROMISE_SCAM_dinner}}</li>
+<li>PROMISE proceedings: {{sc.extra_PROMISE_proceedings}}</li>
+<li>SCAM proceedings: {{sc.extra_SCAM_proceedings}}</li>
+<li>WSE dinner price: {{sc.extra_WSE_dinner_price}}</li>
+<li>WSE proceedings: {{sc.extra_WSE_proceedings}}</li>
+<li>FAMOOSR: {{sc.FAMOOSR}}</li>
+<li>MESOA: {{sc.MESOA}}</li>
+</ul>
+{% endwith %}
+{% if object.reservation %}
+<h2>Hotel reservation:</h2>
+    {% with object.reservation as res %}
+    <p>{{res}}: {{res.number_of_rooms}} {{res.get_room_kind_display}} room{{ res.number_of_rooms|pluralize }}.</p>
+    {% endwith %}
+{% else %}
+    <p>No hotel reservation.</p>
+{% endif%}
+<a href="{% url userprofile:list %}">Back</a>
+{% endblock %}

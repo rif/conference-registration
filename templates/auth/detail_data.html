@@ -1,0 +1,40 @@
+<h5><b>Profile</b></h5>
+{% with object.about as a %}
+<ul>
+    <li>{{a.get_title_display}} {{a.first_name}} {{a.last_name}}</li>
+    <li>{{a.job_position}} at {{a.organisation}}</li>
+    <li>Email: {{a.email}}</li>
+    <li>Tel: {{a.phone}} {% if a.fax %}Fax: {{a.fax}} {% endif %}</li>
+    <li>Address: {{a.address}} {{a.posta_code}} {{a.get_country_display}}</li>
+    <li>Vegetarian: {{a.vegetarian|yesno}}</li>
+    <li>Like Jogging: {{a.like_jogging|yesno}}</li>
+    <li>Special needs: {{a.other_special_needs}}</li>
+</ul>
+{% endwith %}
+<h5><b>Arrival &amp; Departure</b></h5>
+{% with object.accomodation as acc %}
+<ul>
+    <li>Arrival: {{acc.arrival_date|date:"d.M.Y"}}</li>
+    <li>Arrival Time: {{acc.arrival_time}}</li>
+    <li>Departure: {{acc.departure_date|date:"d.M.Y"}}</li>
+</ul>
+{% endwith %}
+<h5><b>Participant status</b></h5>
+{% with object.status as s %}
+<ul>
+    {%if s.IEEE_member_number %}<li>IEEE member number: {{s.IEEE_member_number}}</li>{% endif %}
+    {%if s.student %}<li>Student</li>{% endif %}
+    {%if s.keynote_speaker %}<li>Keynote speaker</li>{% endif %}
+    {%if s.tutorial_speaker %}<li>Tutorial speaker</li>{% endif %}
+    {%if s.other %}<li>Other: {{s.other}}</li>{% endif %}
+
+    {% if user.is_staff %}
+        <li>Is member: {{s.is_member|yesno}}</li>
+        <li>Payment cathegory: {{s.get_payment_cathegory}}</li>
+        <li>Has ICSM paper: {{object.shoppingcart.icsm_have_paper|yesno}}</li>
+        {% if object.shoppingcart.is_empty %}
+        <li class="errorlist">Empty shoppingcart!</li>
+        {% endif %}
+    {% endif %}
+</ul>
+{% endwith %}

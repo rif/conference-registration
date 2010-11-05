@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load uni_form_tags %}
+{% block title %}ICSM 2010 Names and emails{% endblock %}
+{% block header %}
+<link rel="stylesheet" href="{{ MEDIA_URL }}uni_form/uni-form.css" type="text/css" />
+<link rel="stylesheet" href="{{ MEDIA_URL }}uni_form/default.uni-form.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<form id="stats-form" class="uniForm" action="." method="POST">{% csrf_token %}
+{{ form|as_uni_form }}
+<input type="submit" value="Get emails" /><br>
+</form>
+  <table>
+    <thead><tr><th>Name</th><th>Email</th></tr></thead>
+    <tbody>
+      {%for user in users %}
+      <tr>
+        <td><a href="{% url userprofile:detail user.id %}">{{ user.get_full_name }}</a></td><td>{{user.email}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h4>Email to:</h4>
+  <p>
+    {%for user in users %}
+      {{ user.email }},
+    {% endfor %}
+  </p>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{ MEDIA_URL }}uni_form/uni-form.jquery.js"></script>
+{% endblock %}
+

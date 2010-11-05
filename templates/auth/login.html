@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}ICSM 2010, Welcome{% endblock %}
+{% block content %}
+{% if user.is_staff %}
+    <ul>
+    <li><a href="{% url userprofile:list %}">List users</a></li>
+    <li><a href="{% url admin:index %}">Administration</a></li>
+    <li><a href="{% url hotels:hot-list %}">Unprocessed reservation/cancellation list</a></li>
+    <li><a href="{% url userprofile:statistics %}">Statistics</a></li>
+    <li><a href="{% url userprofile:names %}">Names to emails</a></li>
+    <li><a href="{% url payment:receipts %}">Receipts</a></li>
+    </ul>
+{% else %}
+    {% if not user.is_authenticated %}
+    <div id="detail-data">
+        {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+        <p>Login to edit your registration details</p>
+        <form method="post" action="{% url userprofile:login %}">{% csrf_token %}
+        <table>
+        <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr>
+        </table>
+
+        <input type="submit" value="login" />
+        <input type="hidden" name="next" value="{% url userprofile:home %}" />
+        </form>
+        <span class="note">If you already initiated your registration process, you can now check or modify your registration by logging in to the ICSM account that was created for you when you initially registered.</span>
+    </div>
+	<div>&nbsp;</div>
+    <h1><a href="{% url userprofile:register %}">Start Your Registration!</a></h1>
+    <span class="note">If you want to register for ICSM and/or some of the co-located events (PROMISE, SCAM, WSE) please follow the link above to initiate your registration process.<br>
+&nbsp;<p>Wondering what the <a href="http://icsm2010.upt.ro/registration/fees">registration fees</a> are?</p>
+<a href="http://icsm2010.upt.ro/travel/us_students">US students can apply for travel support.</a></span>
+    {% else %}
+        <a href="{% url userprofile:home %}">Edit your registration details</a>
+    {% endif %}
+{% endif %}
+{% endblock %}
+

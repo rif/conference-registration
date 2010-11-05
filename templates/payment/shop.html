@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Shop{% endblock %}
+
+{% block content %}
+<p>You registered as a {{pacakge.name}} participant. Here are the prices for this package:</p>
+
+{% csrf_token %}
+<table id="shop-table">
+  <thead>
+  <tr>
+    <th>Item</th>
+    <th>Item Rate</th>
+    {% if user.status.is_regular_student %}<th>Special rate</th>{% endif %}
+    <th width="80">Item Count</th>
+    <th>Total</th>
+  </tr>
+  </thead>
+  <tbody>
+    {% for sc in sc_items %}
+    <tr class="shop-row" id="{{ sc.2 }}">
+        <td width="450"><a href="{{ sc.3 }}" target="_blank">{{ sc.0|safe }}</a></td>
+        <td><span class="item_price" id="{% url payment:ajax-have-paper %}">{{ sc.1 }}</span></td>
+        {% if user.status.is_regular_student %}
+        {% if forloop.counter == 1 %}
+        <td class="special_rate">
+            <label for="have_paper">Have paper?</label>
+            <input type="checkbox" name="have_paper" class="have_paper" id="{% url payment:ajax-get-have-paper sc.2 %}"><br>
+            <span class="paper_nb_span" style="display:none;">
+                <label for="paper_nb">Paper nb:</label>
+                <input type="text" size="3" maxlength="3" name="paper_nb" class="paper_nb" href="{% url payment:ajax-set-paper-nb %}" id="{% url payment:ajax-get-paper-nb sc.2 %}">
+            </span>
+        </td>
+        {% else %}
+        <td>&nbsp;</td>
+        {% endif %}
+        {% endif %}
+        <td><a class="mmod" href="{% url payment:ajax-mod %}">
+                <img src="{{ MEDIA_URL }}images/minus.png" alt="-">
+            </a>
+            <span class="counter" id="{% url payment:ajax-item-count sc.2 %}">0</span>
+            <a class="pmod" href="{% url payment:ajax-mod %}">
+             <img src="{{ MEDIA_URL }}images/plus.png" alt="+">
+            </a>
+            </td>
+        <td><span class="partsum" id="{% url payment:ajax-part-sum sc.2 %}">0</span></td>
+    </tr>
+    {% endfor %}
+    <tr id="total-row">
+       <td colspan="{% if user.status.is_regular_student %}4{% else %}3{% endif %}">Total</td><td><span class="{% url payment:ajax-tot-sum %}" id="totsum">0</span>&euro;</td>
+    </tr>
+  </tbody>
+</table>
+<div id="paypal-div">
+    {% include "payment/paypal.html" %}
+</div>
+<div>
+    <a id="email" href="{% url payment:email %}"><img height="60px" src="{{ MEDIA_URL }}images/pay_by_email.png" alt="Send payment details by email"></a>
+    <div id="email-response">&nbsp;</div>
+</div>
+
+
+<p class="note">Note: Independent of our will, paying via PayPal requires the creation of a PayPal account. However, even if you don't have a PayPal account, the overhead is minimal: it just requires you to provide a password and to push the "Agree and Continue" button. After that, you can immediately proceed with the payment; no other extra-effort is involved.</p>
+
+<p><a href="{% url userprofile:home %}">Home</a></p>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/shop.js"></script>
+{% endblock %}

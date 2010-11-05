@@ -1,0 +1,39 @@
+Hello {{object.get_full_name}},
+
+You modified your ICSM 2010 profile.
+
+At http://icsm2010.upt.ro/registration you can do the following actions:
+
+- edit you registration information
+- select the events you want to attend and pay by Paypal or Bank transfer.
+- create a hotel reservation
+
+About you
+{% with object.about as a %}
+{{a.get_title_display}} {{a.first_name}} {{a.last_name}}
+{{a.job_position}} at {{a.organisation}}
+Email: {{a.email}} hide: {{a.hide_email}}
+Tel: {{a.phone}} {% if a.fax %}Fax: {{a.fax}} {% endif %}
+Address: {{a.address}} {{a.posta_code}} {{a.get_country_display}}
+Vegetarian: {{a.vegetarian|yesno}}
+Like Jogging: {{a.like_jogging|yesno}}
+Special needs: {{a.other_special_needs}}
+{% endwith %}
+
+Accomodation
+{% with object.accomodation as acc %}
+Arrival: {{acc.arrival_date|date:"d.M.Y"}}
+Arrival Time: {{acc.arrival_time}}
+Departure: {{acc.departure_date|date:"d.M.Y"}}
+{% endwith %}
+
+Participant status
+{% with object.status as s %}
+{%if s.IEEE_member_number %}IEEE member number: {{s.IEEE_member_number}}{% endif %}
+{%if s.student %}Student: {{s.student}}{% endif %}
+{%if s.keynote_speaker %}Keynote speaker{% endif %}
+{%if s.tutorial_speaker %}Tutorial speaker{% endif %}
+{%if s.other %}Other: {{s.other}}{% endif %}
+{% endwith %}
+
+

@@ -1,0 +1,11 @@
+Hello {{res.user.get_full_name}},
+
+Hotel:              {{res.hotel}}
+Room type:          {{res.number_of_rooms}} {{res.get_room_kind_display}} {% if res.smoker_room %}smoker{% endif %} room{{ res.number_of_rooms|pluralize }}
+Period:             {{res.arrival_date}} - {{res.departure_date}} ({{res.get_days}} night{{ res.get_days|pluralize }})
+Price:              {{res.get_price}}EUR
+
+
+Notes:
+* In order to make sure that your reservations are secured, we will update hotels weekly with these reservations, and make sure that at your arrival you have exactly the type of room you reserved
+* This reservation does NOT require an advanced payment. You will pay the entire amount, on your arrival, directly at the hotel

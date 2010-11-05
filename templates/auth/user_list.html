@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}User List{% endblock %}
+
+{% block content %}
+<ol>
+{%for usr in object_list %}
+    {% if not usr.is_staff %}
+        <li {% if not usr.is_active %}class="canceled"{% endif %}><a href="{% url userprofile:detail usr.id %}">{{usr.get_full_name}}</a></li>
+    {% endif %}
+{% endfor %}
+</ol>
+{% endblock %}
