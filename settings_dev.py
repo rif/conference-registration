@@ -53,7 +53,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'icsm_registration.urls'
+ROOT_URLCONF = 'conference_registration.urls'
 
 TEMPLATE_DIRS = (
     rel('templates'),
