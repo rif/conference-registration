@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>{% block title %}ICSM 2010 - Registartion{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/print.css" type="text/css" media="print">
+    <!--[if IE]>
+        <link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection">
+    <![endif]-->
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/smoothness/jquery-ui.custom.css" type="text/css">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/icsm.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css" type="text/css" media="screen">
+    {% block header %}{% endblock %}
+  </head>
+  <body>
+    <div class="prepend-top container">
+        <div class="column span-24 last header">                <div class="menuIcon icon">
+             <a title="International Conference on Software Maintenance" class="internal page" href="http://icsm2010.upt.ro/"><img alt="Logo" src="http://icsm2010.upt.ro/?_s=G-rn4R9qL3EJgyuv"></a>
+                 </div>
+                 <div class="menu"> 			<ul><li><a title="ICSM 2010" class="internal page" href="http://icsm2010.upt.ro/home">ICSM 2010</a></li><li> <a title="Final Submission for the Conference Proceedings" class="internal page" href="http://icsm2010.upt.ro/camera_ready">Submission</a></li><li><a class="internal page" title="Travel &amp; Stay" href="http://icsm2010.upt.ro/travel">Travel&amp;Stay</a></li><li><a title="http://registration.icsm2010.upt.ro" class="active external" href="http://registration.icsm2010.upt.ro">Registration</a></li><li><a title="Program" class="internal page" href="http://icsm2010.upt.ro/program">Program</a></li><li><a title="News" class="internal blog" href="http://icsm2010.upt.ro/blog">News</a> <a title="Contact" class="internal page" href="http://icsm2010.upt.ro/Contact">Contact</a></li></ul> 		</div>
+        <div class="column mainbody span-21 prepend-3 last">
+            {% if user.is_authenticated %}
+                <div class="text-right">
+                {% if user.get_full_name%}<a href="{% url userprofile:home %}">{{user.get_full_name}}</a>{% else %}{{user.username}}{% endif %}, <a href="{% url userprofile:logout %}">Log out</a>
+                </div>
+            {% endif %}
+            {% block content %}{% endblock %}
+        </div>
+
+        <div class="footer column span-24 last">
+            <div class="column span-2 prepend-22 last">
+            <a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangosite80x15_grey.gif" border="0" alt="A Django site." title="A Django site."/></a>
+        </div>
+        </div>
+        </div>
+  </body>
+  <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-ui.custom.min.js"></script>
+  {% block scripts %}{% endblock %}
+</html>

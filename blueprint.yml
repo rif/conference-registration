@@ -1,0 +1,8 @@
+icsm:
+  path: ./media/css/blueprint
+  custom_layout:
+    column_count: 24
+    column_width: 30
+    gutter_width: 10
+  plugins:
+    - fancy-type

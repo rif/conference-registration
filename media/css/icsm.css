@@ -1,0 +1,122 @@
+.olddate {
+	color: gray;
+	text-decoration: line-through;}
+
+.committees {
+	float: left;
+	text-align: right;
+}
+.submission, .chairs {
+font-size: 1.2em; height: 1.25em; line-height: 1.25; margin-bottom: 1.25em; }
+
+body {font-size: 95%; padding-top: 0em; margin-top: -0;}
+
+/*FRONT*/
+.titleLarge {
+	font-size: 5.2em;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1;
+	letter-spacing: -3px;
+}
+.venue {color: #888888;}
+
+.colocate {color: #888888;background: #B2B2B2;}
+.keynotemaintrack {color: #888888;background: #FEB380;}
+.breaks {color: #888888;background: #BFFEBF;}
+.socialEvents {color: #888888;background: #FEF2BF;}
+.otherTracks {color: #888888;background: #80C8FE;}
+
+
+.date {color: #888888; font-size: 1.2em;}
+.followus {margin-top: 3em;}
+.front .news {color: #888888; font-size: 80%;}
+.front .news h1 {color: #888888;}
+.front .footer {display: none;}
+.front .sponsors img{padding-right: 0.6em; padding-left: 0.6em}
+.smallSize {font-size: 70%;}
+.infolinks img {padding-right: 0.25em; padding-left: 0.25em;}
+.infolinks a:hover {background: #007cff;}
+
+/* HEADER */
+.menuIcon {float: left;  margin-top: 0px; margin-left: 0px;}
+.icon a:hover {background: white;}
+.menu {
+	margin-top: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background: #007cff;
+	color: white;
+	-moz-border-radius-topright: 15px;
+	-webkit-border-top-right-radius: 15px;
+	-moz-border-radius-bottomright: 15px;
+	-webkit-border-bottom-right-radius: 15px;}
+.menu a {color: white}
+.menu ul {
+	margin: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	list-style-type: none;}
+.menu ul li {
+	display: inline;
+	margin: 0;
+	margin-right: 1.5em;
+	list-style-type: none;}
+.menu li a {
+	padding-left: 1em;
+	padding-right: 1em;}
+.menu li a.active {
+	color: #007dff;
+	background: white;}
+
+/*MAIN BODY*/
+.mainbody {
+	padding-top: 2em;
+	padding-bottom: 15em;}
+
+/* FOOTER */
+.footer {
+	color: #aaa;
+	font-size: 80%;
+	text-align: left;}
+.footer a { color: #aaa;}
+.footer ul {list-style: none; margin-left: 0em;}
+.footer ul ul {margin-left: 1.5em;}
+.footer .commands ul, .footer .views ul {display: inline;}
+.footer .commands ul li, .footer .views ul li {display: inline; padding-right: 1em;}
+
+
+
+/*DEFAULT*/
+h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: inherit; font-size: 100%; line-height: inherit; }
+h1 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
+.maincontents {font-size: 1.5em;}
+h1.heading { font-size: 2em; margin-bottom: 1.5em; }
+h2 { font-size: 1.2em; height: 1.25em; line-height: 1.25; margin-bottom: 1.25em; }
+h3 { font-size: 1em; font-weight: normal; margin-bottom: 1.5em; }
+h4 { font-size: 1em; font-weight: bold; }
+h5 { font-size: 1em; }
+textarea {width: 100%;}
+img {max-width: 99%;}
+
+/* PIER */
+.broken { color: red; font-weight: bold;}
+.protected { color: #aaa; }
+a {color: #007dff;}
+a:hover {
+	color: white;
+	background: #007dff; }
+a:hover.nobackground {background: white;}
+a.view, a.command {color: gray;}
+a {text-decoration: none;}
+a.environment:after {content: "*";}
+.right {text-align: right;}
+.left {text-align: left;}
+.center {text-align: center;}
+.justify {text-align: justify;}
+.float {float: right;}
+.clear {clear: both;}
+.nobullets ul {list-style: none; margin-left: 0;}
+.nobullets ul li {list-style: none; margin-left: 0;}
+th {background: #eee; font-weight: normal;}
+.footnote {font-size: 80%; color: #888888;}
+.postticker .date {font-size: 100%;}

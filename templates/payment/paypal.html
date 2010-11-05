@@ -1,0 +1,11 @@
+<form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_cart">
+<input type="hidden" name="business" value="radum@cs.upt.ro">
+<input type="hidden" name="upload" value="1">
+{% for item in items %}
+<input type="hidden" name="item_name_{{ forloop.counter }}" value="{{ item.0 }}">
+<input type="hidden" name="amount_{{ forloop.counter }}" value="{{ item.1 }}">
+{% endfor %}
+<input type="hidden" name="currency_code" value="EUR">
+<input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+</form>

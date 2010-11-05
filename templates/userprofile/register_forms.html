@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load uni_form_tags %}
+
+{% block title %}{% if user.is_authenticated %}Edit registration data{% else %}Register{% endif %}{% endblock %}
+{% block header %}
+<link rel="stylesheet" href="{{ MEDIA_URL }}uni_form/uni-form.css" type="text/css" />
+<link rel="stylesheet" href="{{ MEDIA_URL }}uni_form/default.uni-form.css" type="text/css" />
+{% endblock %}
+{% block content %}
+<form class="uniForm" action="{% if user.is_authenticated %}{% url userprofile:edit %}{%else%}{% url userprofile:register %}{%endif%}" method="post">{% csrf_token %}
+
+{% if not user.is_authenticated %}
+    <p class="form-title">User creation</p>
+    <p class="note">The username and password will allow you to perform some of the registration steps later. For example you can modify your profile, make a hotel reservation, or even do the actual payment at a later moment.</p>
+    {{ usercreationform|as_uni_form }}
+{% endif %}
+
+<p class="form-title">About you</p>
+<p class="note">This information will enable us to contact you. Part of this info will be also used for creating your badge.</p>
+{{ aboutform|as_uni_form }}
+<p class="form-title">Your Arrival and Departure</p>
+<p class="note">We ask for  this information for two reasons: (i) to support you with booking a hotel and (ii) for making your transit from the airport to your hotel smoother and faster (i.e. we will pre-order cabs to the airport that will wait for you in front of the airport). Furthermore, the departure date helps us also estimate which social events you will probably attend.  </p>
+{{ accomodationform|as_uni_form }}
+<p class="form-title">Your Participant Status</p>
+<p class="note">This information will determine which of the 5 category of fees  (i.e. Regular, Member, Full-Stime Student, Student Member or Special) fits your status.</p>
+{{ statusform|as_uni_form }}
+<input type="submit" value="Submit" />
+</form>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/dates.js"></script>
+<script src="{{ MEDIA_URL }}uni_form/uni-form.jquery.js" type="text/javascript"></script>
+{% endblock %}
