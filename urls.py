@@ -5,10 +5,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^', include('icsm_registration.userprofile.urls', namespace='userprofile')),
-    (r'^hotels/', include('icsm_registration.hotels.urls', namespace='hotels')),
-    (r'^payment/', include('icsm_registration.payment.urls', namespace='payment')),
-    (r'^iphone/', include('icsm_registration.iphoneids.urls', namespace='iphoneids')),
+    (r'^', include('conference_registration.userprofile.urls', namespace='userprofile')),
+    (r'^hotels/', include('conference_registration.hotels.urls', namespace='hotels')),
+    (r'^payment/', include('conference_registration.payment.urls', namespace='payment')),
+    (r'^iphone/', include('conference_registration.iphoneids.urls', namespace='iphoneids')),
     (r'^admin/', include(admin.site.urls)),
 )
 
