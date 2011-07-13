@@ -2,8 +2,8 @@
 {% load uni_form_tags %}
 {% block title %}ICSM 2010 Statistics{% endblock %}
 {% block header %}
-<link rel="stylesheet" href="{{ MEDIA_URL }}uni_form/uni-form.css" type="text/css" />
-<link rel="stylesheet" href="{{ MEDIA_URL }}uni_form/default.uni-form.css" type="text/css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}uni_form/uni-form.css" type="text/css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}uni_form/default.uni-form.css" type="text/css" />
 {% endblock %}
 
 {% block content %}
@@ -24,5 +24,5 @@ User count: {{shoppingcarts.count}}.
 </ol>
 {% endblock %}
 {% block scripts %}
-<script type="text/javascript" src="{{ MEDIA_URL }}uni_form/uni-form.jquery.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}uni_form/uni-form.jquery.js"></script>
 {% endblock %}

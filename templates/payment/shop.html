@@ -35,11 +35,11 @@
         {% endif %}
         {% endif %}
         <td><a class="mmod" href="{% url payment:ajax-mod %}">
-                <img src="{{ MEDIA_URL }}images/minus.png" alt="-">
+                <img src="{{ STATIC_URL }}images/minus.png" alt="-">
             </a>
             <span class="counter" id="{% url payment:ajax-item-count sc.2 %}">0</span>
             <a class="pmod" href="{% url payment:ajax-mod %}">
-             <img src="{{ MEDIA_URL }}images/plus.png" alt="+">
+             <img src="{{ STATIC_URL }}images/plus.png" alt="+">
             </a>
             </td>
         <td><span class="partsum" id="{% url payment:ajax-part-sum sc.2 %}">0</span></td>
@@ -54,7 +54,7 @@
     {% include "payment/paypal.html" %}
 </div>
 <div>
-    <a id="email" href="{% url payment:email %}"><img height="60px" src="{{ MEDIA_URL }}images/pay_by_email.png" alt="Send payment details by email"></a>
+    <a id="email" href="{% url payment:email %}"><img height="60px" src="{{ STATIC_URL }}images/pay_by_email.png" alt="Send payment details by email"></a>
     <div id="email-response">&nbsp;</div>
 </div>
 
@@ -65,5 +65,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script type="text/javascript" src="{{ MEDIA_URL }}js/shop.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/shop.js"></script>
 {% endblock %}

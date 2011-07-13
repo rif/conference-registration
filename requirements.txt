@@ -1,4 +1,4 @@
-Django==1.2.2
-South==0.7.1
-django-uni-form==0.7.0
-django_extension
+Django
+South
+django-uni-form
+django_extensions
