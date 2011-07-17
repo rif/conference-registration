@@ -3,7 +3,7 @@ from settings_dev import *
 DEBUG = TEMPLATE_DEBUG =True 
 DATABASES = {
     'default': {
-        'ENGINE': 'sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': '/home/rif/db/crisis2011reg.db',
     }
 }
