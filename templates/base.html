@@ -1,41 +1,85 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
-  <head>
-    <title>{% block title %}ICSM 2010 - Registartion{% endblock %}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/print.css" type="text/css" media="print">
-    <!--[if IE]>
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection">
-    <![endif]-->
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/smoothness/jquery-ui.custom.css" type="text/css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/icsm.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" type="text/css" media="screen">
-    {% block header %}{% endblock %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="International Conference on Risks and
+Security of Internet and Systems. The topics addressed by CRiSIS range
+from the analysis of risks, attacks and vulnerabilities to system
+survivability, security policies and models, security mechanisms and
+privacy">
+<meta name="keywords" content="crisis 2011, CRiSIS 2011, CRiSIS'11, crisis,
+conference security, conference crisis, conference crisis 2011, conference CRiSIS, conference CRiSIS 2011,
+dependability, security, privacy, vulnerabilities, system survivability, security policy, security policies, security model, security models, attack, attaks, risk, risks">
+<meta name="revisit-after" content="15 days">
+<meta name="distribution" content="global">
+<meta name="robots" content="ALL">
+<meta name="Identifier-URL" content="http://crisis2011.cs.upt.ro">
+
+<title>{% block title %}6th International Conference on Risks and Security of Internet and Systems (CRiSIS 2011){% endblock %}</title>
+<link href="{{ STATIC_URL }}css/main.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/smoothness/jquery-ui.custom.css" type="text/css">
+{% block header %}{% endblock %}
+
+</head>
+
+<head>
   </head>
-  <body>
-    <div class="prepend-top container">
-        <div class="column span-24 last header">                <div class="menuIcon icon">
-             <a title="International Conference on Software Maintenance" class="internal page" href="http://icsm2010.upt.ro/"><img alt="Logo" src="http://icsm2010.upt.ro/?_s=G-rn4R9qL3EJgyuv"></a>
-                 </div>
-                 <div class="menu"> 			<ul><li><a title="ICSM 2010" class="internal page" href="http://icsm2010.upt.ro/home">ICSM 2010</a></li><li> <a title="Final Submission for the Conference Proceedings" class="internal page" href="http://icsm2010.upt.ro/camera_ready">Submission</a></li><li><a class="internal page" title="Travel &amp; Stay" href="http://icsm2010.upt.ro/travel">Travel&amp;Stay</a></li><li><a title="http://registration.icsm2010.upt.ro" class="active external" href="http://registration.icsm2010.upt.ro">Registration</a></li><li><a title="Program" class="internal page" href="http://icsm2010.upt.ro/program">Program</a></li><li><a title="News" class="internal blog" href="http://icsm2010.upt.ro/blog">News</a> <a title="Contact" class="internal page" href="http://icsm2010.upt.ro/Contact">Contact</a></li></ul> 		</div>
-        <div class="column mainbody span-21 prepend-3 last">
-            {% if user.is_authenticated %}
+<body>
+<table class="main">
+<tr>
+<td class="top" colspan="3">
+<img src="{{ STATIC_URL }}images/front.jpg">
+</td>
+</tr>
+<tr>
+  <td class="col1">
+  <table class="menu">
+<tr><td>&nbsp;</td></tr>
+<tr><td class="menuentry"><a class="menu" href="index.html">Home</a></td></tr>
+<tr><td class="menuentry"><a class="menu" href="committees.html">Committees</a></td></tr>
+<tr><td class="menuentry"><a class="menu" href="call.html">Call for papers</a></td></tr>
+<tr><td class="menuentry"><a class="menu" href="tutorial.html">Tutorial</a></td></tr>
+<tr><td class="menuentry"><a class="menu" href="submission.html">Submission</a></td></tr>
+<tr><td class="menuentry"><a class="menu" href="program.html">Program</a></td></tr>
+<tr><td class="menuentry"><a class="menu" href="registration.html">Registration</a></td></tr>
+<tr><td class="menuentry"><a class="menu" href="keynote.html">Keynote speaker</a></td></tr>
+<tr><td class="menuentry"><a class="menu" href="venue.html">Venue</a></td></tr>
+<tr><td class="menuentry"><a class="menu" href="contacts.html">Contacts</a></td></tr>
+
+<tr><td>&nbsp;</td></tr>
+</table>
+
+  &nbsp;<br>
+  </td>
+  <td class="col2">
+  	{% if user.is_authenticated %}
                 <div class="text-right">
                 {% if user.get_full_name%}<a href="{% url userprofile:home %}">{{user.get_full_name}}</a>{% else %}{{user.username}}{% endif %}, <a href="{% url userprofile:logout %}">Log out</a>
                 </div>
             {% endif %}
             {% block content %}{% endblock %}
-        </div>
+    
 
-        <div class="footer column span-24 last">
-            <div class="column span-2 prepend-22 last">
-            <a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangosite80x15_grey.gif" border="0" alt="A Django site." title="A Django site."/></a>
-        </div>
-        </div>
-        </div>
-  </body>
-  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
-  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui.custom.min.js"></script>
-  {% block scripts %}{% endblock %}
+  </td>
+  <td class="col3">
+  <table class="cassette">
+<tr><th>Important Dates</th></tr>
+<tr><td>Submission deadline:<br><b>6 June 2011</b></td></tr>
+<tr><td>Notification to Authors:<br>15 July 2011</td></tr>
+<tr><td>Camera Ready Due:<br>15 August 2011</td></tr>
+
+<tr><th>Publications</th></tr>
+<tr><td>IEEE Xplore</td></tr>
+
+<tr><th>Technical Sponsorship (since 2009)</th></tr>
+<tr><td><img src="{{ STATIC_URL }}images/TCS_IEEECS.jpg"/></td></tr>
+</table>
+
+  </td>
+</tr>
+</table>
+</body>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui.custom.min.js"></script>
+{% block scripts %}{% endblock %}
 </html>
