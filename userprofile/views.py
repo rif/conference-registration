@@ -11,7 +11,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from userprofile.models import About, Accomodation, Status
 from userprofile.forms import AboutForm, AccomodationForm, StatusForm, StatisticsForm, NamesForm
-from payment.models import ShoppingCart
+
 
 @user_passes_test(lambda u: u.is_staff)
 def restricted_object_detail(*args, **kwargs):
