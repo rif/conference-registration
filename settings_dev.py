@@ -33,6 +33,9 @@ STATIC_ROOT = rel('static')
 STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
+LOGOUT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'icsm2010info@gmail.com'
 EMAIL_HOST_PASSWORD = '1csmzoio'
@@ -85,7 +88,5 @@ INSTALLED_APPS = (
     'django_extensions',
     # my apps
     'userprofile',
-    'hotels',
     'payment',
-    'iphoneids',
 )

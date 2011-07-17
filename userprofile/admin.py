@@ -14,8 +14,8 @@ class AccomodationAdmin(admin.ModelAdmin):
 
 class StatusAdmin(admin.ModelAdmin):
     search_fields = ['user__first_name', 'user__last_name']
-    list_display = ('__unicode__', 'IEEE_member_number', 'student', 'keynote_speaker', 'tutorial_speaker', 'other')
-    list_filter = ('student', 'keynote_speaker', 'tutorial_speaker')
+    list_display = ('__unicode__', 'IEEE_member_number', 'student')
+    list_filter = ('student',)
 
 
 admin.site.register(About, AboutAdmin)
