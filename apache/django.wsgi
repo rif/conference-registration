@@ -2,10 +2,10 @@ import os
 import sys
 import site
 
-site.addsitedir('/home/horia/.virtualenvs/icsm/lib/python2.5/site-packages')
-sys.path.append('/home/icsmreg/icsm_registration')
+site.addsitedir('/home/rif/.virtualenvs/crisis/lib/python2.6/site-packages/')
+sys.path.append('/home/rif/conference_registration/')
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'icsm_registration.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'conference_registration.settings'
 
 import django.core.handlers.wsgi
 application = django.core.handlers.wsgi.WSGIHandler()
