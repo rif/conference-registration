@@ -7,6 +7,7 @@ body  {
 .text-right {text-align: right;}
 .text-center {text-align: center;}
 .center {text-align: center;}
+p.info {color: #609C60; font-style: italic; font-size:1.3em;}
 .errorlist{color: red; background-color: pink; list-style-type: none;}
 .form-title {font-size:130%; font-weight: bold; color: navy; padding: 35px 0px 5px 0px; }
 /*.form-table>tbody>tr>td, .note {font-size:80%; color: gray;}
