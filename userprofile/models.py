@@ -56,9 +56,6 @@ class Status(models.Model):
     user = models.OneToOneField(User, editable=False)
     IEEE_member_number = models.CharField(max_length="8", null=True, blank=True, validators=[validators.RegexValidator("\d{8}", "Please provide the 8 digits IEEE number.")], help_text="While no verification occurs at this time, we will check manually your IEEE number.")
     student = models.BooleanField(help_text="I am a full-time student and will provide documentary proof of that. To get the student reduced fee, please send proof of full-time student status (e.g. copy of student card) to info@icsm2010.upt.ro or by fax: +40 256 244834.")
-    keynote_speaker = models.BooleanField(help_text="Check this if you are invited to give a keynote at any of the scientific events (ICSM, PROMISE, SCAM, WSE)")
-    tutorial_speaker = models.BooleanField(help_text="Check this if you are giving one of the ICSM tutorials")
-    other = models.CharField(max_length=50, null=True, blank=True, help_text="This field is intended for exceptional situations. Leave it empty, except for the case you have previously spoken with the General Chair of ICSM 2010 about what to write here.")
 
     def __unicode__(self):
         return self.user.get_full_name() + " status"

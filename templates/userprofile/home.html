@@ -2,58 +2,18 @@
 {% block title %}ICSM 2010 Registration{% endblock %}
 {% block content %}
 <div id="detail-data">
-    {% include "auth/detail_data.html" %}
-    <a href="{% url userprofile:edit %}">Edit registration data</a>
+  {% include "auth/detail_data.html" %}
+  <a href="{% url userprofile:edit %}">Edit registration data</a>
 </div>
 <div id="payment">
-<h1 class="form-title">Payment details</h1>
-{% if user.shoppingcart.payment_received %}
-<div>Your payment was received.</div>
-{% else %}
-<div class="red">You have not paid yet your registration fees<br>
-<span class="note">Note: This message will remain for a few days after you made the payment till we process it.</span></div>
-{% endif %}
-<a href="{% url payment:shop %}">Perform a payment</a>
-</div>
-<div id="hotel-reservation">
-<h1 class="form-title">Hotel reservation details</h1>
-{% if user.reservation %}
-{% with user.reservation as res %}
-    <div>You have a reservation at {{res.hotel }} hotel ({{res.number_of_rooms}} {{res.get_room_kind_display}} {% if res.smoker_room %}smoker{% endif %} room{{ res.number_of_rooms|pluralize }}).<br>
-    The price for {{res.get_days}} night{{ res.get_days|pluralize }} is {{res.get_price}}EUR.</div>
-{% endwith %}
-{% else %}
-<div class="red">You have no hotel reservation.</div>
-{% endif %}
-<div>
-<br>
-Please make/modify your booking with the <a href="http://icsm2010.upt.ro/travel/hotels" target="_blank">hotels</a> directly.<br>
-Some <a href="http://icsm2010.upt.ro/travel/hotels" target="_blank">hotels</a> may still offer discount rates
-on mentioning ICSM&nbsp;2010&nbsp;/&nbsp;Politehnica&nbsp;University.
-</div>
-</div>
-<h1 class="form-title">Registered apple devices</h1>
-<ul>
-{% for device in user.iphoneid_set.iterator %}
-<li>{{device.device_name}} <a href="{% url iphoneids:update device.id %}">Modify</a> <a href="{% url iphoneids:delete device.id %}">Delete</a></li>
-{% empty %}
-No device registered
-{% endfor %}
-</ul>
-<a href="{% url iphoneids:create %}">Add device id</a>
-<br>
-<div>
-<p>For reasons beyond our control we're not sure the application
-will be on AppStore in time, so we resort to the following:</p>
-<p>To send us your device ID follow these steps:</p>
-<ol>
-<li>Launch iTunes.</li>
-<li>Connect your device to your computer.</li>
-<li>Select the device in the Devices list.</li>
-<li>In the Summary pane, click the Serial Number label. It changes to Identifier.</li>
-<li>In the iTunes menu choose Edit > Copy.</li>
-<li>Use <a href="{% url iphoneids:create %}">Add device id</a> link and paste the number in the <b>Device id</b> field.</li>
-</ol>
+  <h1 class="form-title">Payment details</h1>
+  {% if user.shoppingcart.payment_received %}
+  <div>Your payment was received.</div>
+  {% else %}
+  <div class="red">You have not paid yet your registration fees<br>
+    <span class="note">Note: This message will remain for a few days after you made the payment till we process it.</span></div>
+  {% endif %}
+  <a href="{% url payment:shop %}">Perform a payment</a>
 </div>
 {% endblock %}
 
