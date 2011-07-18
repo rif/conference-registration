@@ -24,3 +24,5 @@ class StatusForm(forms.ModelForm):
         model = Status
         exclude = ('user', 'payment_received')
 
+class NamesForm(forms.Form):
+    names = forms.CharField(max_length=300, required=False, help_text='Comma separated names or part of the names')
