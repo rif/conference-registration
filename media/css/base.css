@@ -1,9 +1,91 @@
-body  {
-#  background:none repeat scroll 0 0 #FFFFFF;
-#  background:none repeat scroll 0 0 #FFFFFF;
-  color:#222222;
-  font-family:"Helvetica Neue",Arial,Helvetica,sans-serif;
+* {
+    padding: 0;
+    margin: 0;
 }
+body {
+    color: black;
+    background: #F0F0F6;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, serif;
+    font-size: 11pt;
+}
+
+.tenpixpadder {
+    padding: 10px;
+}
+
+#header {
+    padding: 5px;
+    width: 80%;
+    margin: auto;
+}
+
+#container {
+    width: 100%;
+    margin: auto;
+}
+
+#container #leftcolumn {
+    width: 18%;
+    float: left;
+}
+
+#container #middlecolumn {
+    width: 64%;
+    float: left;
+}
+
+#container #rightcolumn {
+    width: 18%;
+    float: left;
+}
+
+.menu {
+    background-color: #5555B0;
+    text-align: right;
+    padding: 20px 10px;
+    margin: 5px;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu a:link,.menu a:visited {
+    color: #E58022;
+    text-decoration: none;
+    font-size: 14pt;
+}
+
+.menu a:hover {
+	color: #CCCCCC;
+	text-decoration: none;
+}
+
+.cassette {
+    margin: 5px;
+}
+
+.cassette .title {
+    padding: 0;
+    border-top: solid 2px #F0F0F6;
+    border-bottom: solid 2px #F0F0F6;
+    background-color: #609C60;
+    color: white;
+    text-align: center;
+}
+
+.cassette .text {
+    background-color: #5555B0;
+    color: #E58022;
+    text-align: center;
+    padding: 10px;
+}
+
+.cassette .text p {
+    padding: 10px 10px;
+}
+
 .text-right {text-align: right;}
 .text-center {text-align: center;}
 .center {text-align: center;}
