@@ -1,86 +1,96 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="description" content="International Conference on Risks and
-Security of Internet and Systems. The topics addressed by CRiSIS range
-from the analysis of risks, attacks and vulnerabilities to system
-survivability, security policies and models, security mechanisms and
-privacy">
-<meta name="keywords" content="crisis 2011, CRiSIS 2011, CRiSIS'11, crisis,
-conference security, conference crisis, conference crisis 2011, conference CRiSIS, conference CRiSIS 2011,
-dependability, security, privacy, vulnerabilities, system survivability, security policy, security policies, security model, security models, attack, attaks, risk, risks">
-<meta name="revisit-after" content="15 days">
-<meta name="distribution" content="global">
-<meta name="robots" content="ALL">
-<meta name="Identifier-URL" content="http://crisis2011.cs.upt.ro">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
+    <meta name="description" content="International Conference on Risks and
+				      Security of Internet and Systems. The topics addressed by CRiSIS range
+				      from the analysis of risks, attacks and vulnerabilities to system
+				      survivability, security policies and models, security mechanisms and
+				      privacy"/>
+    <meta name="keywords" content="crisis 2011, CRiSIS 2011, CRiSIS'11, crisis,
+				   conference security, conference crisis, conference crisis 2011, conference CRiSIS, conference CRiSIS 2011,
+				   dependability, security, privacy, vulnerabilities, system survivability, security policy, security policies, security model, security models, attack, attaks, risk, risks"/>
+    <meta name="revisit-after" content="15 days"/>
+    <meta name="distribution" content="global"/>
+    <meta name="robots" content="ALL"/>
+    <meta name="Identifier-URL" content="http://crisis2011.cs.upt.ro"/>
 
-<title>CRiSIS 2011, {% block title %}6th International Conference on Risks and Security of Internet and Systems (CRiSIS 2011){% endblock %}</title>
-<link href="{{ STATIC_URL }}css/base.css" rel="stylesheet" type="text/css">
-<link href="http://crisis2011.cs.upt.ro/main.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="{{ STATIC_URL }}css/smoothness/jquery-ui.custom.css" type="text/css">
-{% block header %}{% endblock %}
-
-</head>
-
-<head>
+    <title>6th International Conference on Risks and Security of Internet and Systems (CRiSIS 2011)</title>
+    <link href="http://crisis2011.cs.upt.ro/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/base.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/smoothness/jquery-ui.custom.css" type="text/css">
+    {% block header %}{% endblock %}
   </head>
-<body>
-<table class="main">
-<tr>
-<td class="top" colspan="3">
-<img src="{{ STATIC_URL }}images/front.jpg">
-</td>
-</tr>
-<tr>
-  <td class="col1">
-  <table class="menu">
-<tr><td>&nbsp;</td></tr>
-<tr><td class="menuentry"><a class="menu" href="http://crisis2011.cs.upt.ro/index.html">Home</a></td></tr>
-<tr><td class="menuentry"><a class="menu" href="http://crisis2011.cs.upt.ro/committees.html">Committees</a></td></tr>
-<tr><td class="menuentry"><a class="menu" href="http://crisis2011.cs.upt.ro/call.html">Call for papers</a></td></tr>
-<tr><td class="menuentry"><a class="menu" href="http://crisis2011.cs.upt.ro/tutorial.html">Tutorial</a></td></tr>
-<tr><td class="menuentry"><a class="menu" href="http://crisis2011.cs.upt.ro/submission.html">Submission</a></td></tr>
-<tr><td class="menuentry"><a class="menu" href="http://crisis2011.cs.upt.ro/program.html">Program</a></td></tr>
-<tr><td class="menuentry"><a class="menu" href="http://registration-crisis2011.cs.upt.ro">Registration</a></td></tr>
-<tr><td class="menuentry"><a class="menu" href="http://crisis2011.cs.upt.ro/keynote.html">Keynote speaker</a></td></tr>
-<tr><td class="menuentry"><a class="menu" href="http://crisis2011.cs.upt.ro/venue.html">Venue</a></td></tr>
-<tr><td class="menuentry"><a class="menu" href="http://crisis2011.cs.upt.ro/contacts.html">Contacts</a></td></tr>
-
-<tr><td>&nbsp;</td></tr>
-</table>
-
-  &nbsp;<br>
-  </td>
-  <td class="col2">
-  	{% if user.is_authenticated %}
+  <body>
+    <div id="header">
+      <img src="{{ STATIC_URL }}images/front.jpg" alt="header" />
+    </div>
+    <div id="container">
+      <div id="leftcolumn">
+	<div class="menu">
+	  <ul>
+	    <li><a href="">Home</a></li>
+	    <li><a href="">Committees</a></li>
+	    <li><a href="">Call for papers</a></li>
+	    <li><a href="">Tutorial</a></li>
+	    <li><a href="">Submission</a></li>
+	    <li><a href="">Program</a></li>
+	    <li><a href="">Registration</a></li>
+	    <li><a href="">Keynote speaker</a></li>
+	    <li><a href="">Venue</a></li>
+	    <li><a href="">Sponsors</a></li>
+	    <li><a href="">Contacts</a></li>
+	  </ul>
+	</div>
+      </div>
+      <div id="middlecolumn">
+	<div class="tenpixpadder">
+	    	{% if user.is_authenticated %}
                 <div class="text-right">
                 {% if user.get_full_name%}<a href="{% url userprofile:home %}">{{user.get_full_name}}</a>{% else %}{{user.username}}{% endif %}, <a href="{% url userprofile:logout %}">Log out</a>
                 </div>
             {% endif %}
             {% block content %}{% endblock %}
+	</div>
+      </div>
+      <div id="rightcolumn">
+	<div class="cassette">
+	  <div class="title">
+	    Important Dates
+	  </div>
+	  <div class="text">
+	    <p>
+	      Submission deadline:<br />
+	      <b>6 June 2011</b>
+	    </p>
+	    <p>
+	      Notification to Authors:<br />
+	      <b>20 July 2011</b>
+	    </p>
+	    <p>
+	      Camera Ready Due:<br />
+	      15 August 2011</p>
+	  </div>
+	  <div class="title">
+	    Publications
+	  </div>
+	  <div class="text">
+	    <p>IEEE Xplore</p>
+	  </div>
+	  <div class="title">
+	    Technical Sponsorship (since 2009)
+	  </div>
+	  <div class="text">
+	    <img src="{{ STATIC_URL }}images/TCS_IEEECS.jpg" alt="tcs ieeecs" />
+	  </div>
+	</div>
+      </div>
+  </body>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui.custom.min.js"></script>
+  {% block scripts %}{% endblock %}
+</html>	
+
+
+
     
-
-  </td>
-  <td class="col3">
-  <table class="cassette">
-<tr><th>Important Dates</th></tr>
-<tr><td>Submission deadline:<br><b>6 June 2011</b></td></tr>
-<tr><td>Notification to Authors:<br>15 July 2011</td></tr>
-<tr><td>Camera Ready Due:<br>15 August 2011</td></tr>
-
-<tr><th>Publications</th></tr>
-<tr><td>IEEE Xplore</td></tr>
-
-<tr><th>Technical Sponsorship (since 2009)</th></tr>
-<tr><td><img src="{{ STATIC_URL }}images/TCS_IEEECS.jpg"/></td></tr>
-</table>
-
-  </td>
-</tr>
-</table>
-</body>
-<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui.custom.min.js"></script>
-{% block scripts %}{% endblock %}
-</html>
