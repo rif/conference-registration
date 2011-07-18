@@ -22,7 +22,7 @@ class AccomodationForm(forms.ModelForm):
 class StatusForm(forms.ModelForm):
     class Meta:
         model = Status
-        exclude = ('user')
+        exclude = ('user', 'payment_received')
 
 class StatisticsForm(forms.Form):
     icsm = forms.BooleanField(required=False)

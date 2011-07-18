@@ -7,8 +7,8 @@
 </div>
 <div id="payment">
   <h1 class="form-title">Payment details</h1>
-  {% if user.shoppingcart.payment_received %}
-  <div>Your payment was received.</div>
+  {% if user.status.payment_received %}
+  <div class="info">Your payment was received.</div>
   {% else %}
   <div class="red">You have not paid yet your registration fees<br>
     <span class="note">Note: This message will remain for a few days after you made the payment till we process it.</span></div>
