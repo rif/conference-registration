@@ -10,7 +10,7 @@ from django.core.mail import EmailMessage
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from userprofile.models import About, Accomodation, Status
-from userprofile.forms import AboutForm, AccomodationForm, StatusForm, StatisticsForm, NamesForm
+from userprofile.forms import AboutForm, AccomodationForm, StatusForm, NamesForm
 
 
 @user_passes_test(lambda u: u.is_staff)
