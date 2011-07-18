@@ -10,7 +10,7 @@
   {% if user.status.payment_received %}
   <div class="info">Your payment was received.</div>
   {% else %}
-  <div class="red">You have not paid yet your registration fees<br>
+  <div class="red">You have not paid yet your registration fees<br/>
     <span class="note">Note: This message will remain for a few days after you made the payment till we process it.</span></div>
   {% endif %}
   <a href="{% url payment:shop %}">Perform a payment</a>
