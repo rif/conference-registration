@@ -3,17 +3,17 @@
 {% block content %}
 <div id="detail-data">
   {% include "auth/detail_data.html" %}
-  <a href="{% url userprofile:edit %}">Edit registration data</a>
+  <a class="button" href="{% url userprofile:edit %}"><span class="pen icon"></span>Edit registration data</a>
 </div>
 <div id="payment">
   <h1 class="form-title">Payment details</h1>
   {% if user.status.payment_received %}
-  <div class="info">Your payment was received.</div>
+  <div class="info">Thank you! Your payment was received.</div>
   {% else %}
   <div class="red">You have not paid yet your registration fees<br/>
     <span class="note">Note: This message will remain for a few days after you made the payment till we process it.</span></div>
   {% endif %}
-  <a href="{% url payment:shop %}">Perform a payment</a>
+  <a class="button" href="{% url payment:shop %}">Perform a payment</a>
 </div>
 {% endblock %}
 

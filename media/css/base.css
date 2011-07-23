@@ -107,7 +107,6 @@ body {
   width: 45%;
   font-size: 88%;
 }
-.right {position: relative; float: right;}
 #detail-data li {list-style-type:none;}
 #hotel-map {margin: 20px 0px 0px 0px;}
 
@@ -133,3 +132,11 @@ font-size: 80%;
 #stats-form input {width: 25%;}
 #stats-form label {width: 25%;}
 #stats-form .ctrlholder {padding: 0px;}
+
+#admin_panel {
+    list-style-type:none;
+}
+
+#admin_panel li {
+    display: inline;
+}

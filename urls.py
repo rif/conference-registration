@@ -11,11 +11,3 @@ urlpatterns = patterns('',
     (r'^iphone/', include('conference_registration.iphoneids.urls', namespace='iphoneids')),
     (r'^admin/', include(admin.site.urls)),
 )
-
-from django.conf import settings
-if settings.DEBUG:
-    urlpatterns += patterns('',
-                            (r'^media/(?P<path>.*)$',
-                            'django.views.static.serve',
-                            {'document_root': settings.MEDIA_ROOT}),
-                            )
