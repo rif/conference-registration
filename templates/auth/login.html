@@ -2,10 +2,10 @@
 {% block title %}Welcome{% endblock %}
 {% block content %}
 {% if user.is_staff %}
-    <ul>
-    <li><a href="{% url userprofile:list %}">List users</a></li>
-    <li><a href="{% url admin:index %}">Administration</a></li>
-    <li><a href="{% url userprofile:names %}">Names to emails</a></li>
+    <ul id="admin_panel">
+    <li><a class="button" href="{% url userprofile:list %}"><span class="user icon"></span>List users</a></li>
+    <li><a class="primary button" href="{% url admin:index %}"><span class="key icon"></span>Administration</a></li>
+    <li><a class="button" href="{% url userprofile:names %}"><span class="mail icon"></span>Names to emails</a></li>
     </ul>
 {% else %}
     {% if not user.is_authenticated %}
@@ -32,12 +32,12 @@
         <span class="note">If you already initiated your registration process, you can now check or modify your registration by logging in to the ICSM account that was created for you when you initially registered.</span>
     </div>
 	<div>&nbsp;</div>
-    <h1><a href="{% url userprofile:register %}">Start Your Registration!</a></h1>
+    <h1><a class="primary button" href="{% url userprofile:register %}"><span class="user icon"></span>Start Your Registration!</a></h1>
     <span class="note">If you want to register for ICSM and/or some of the co-located events (PROMISE, SCAM, WSE) please follow the link above to initiate your registration process.<br/>
 &nbsp;<p>Wondering what the <a href="http://icsm2010.upt.ro/registration/fees">registration fees</a> are?</p>
 <a href="http://icsm2010.upt.ro/travel/us_students">US students can apply for travel support.</a></span>
     {% else %}
-        <a href="{% url userprofile:home %}">Edit your registration details</a>
+        <a class="button" href="{% url userprofile:home %}"><span class="user icon"></span>Edit your registration details</a>
     {% endif %}
 {% endif %}
 {% endblock %}
