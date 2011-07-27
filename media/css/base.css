@@ -33,6 +33,7 @@ body {
 #container #middlecolumn {
     width: 64%;
     float: left;
+    text-shadow: 0 1px 1px white;
 }
 
 #container #rightcolumn {
