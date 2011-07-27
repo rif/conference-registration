@@ -1,4 +1,4 @@
-S# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render_to_response, redirect
