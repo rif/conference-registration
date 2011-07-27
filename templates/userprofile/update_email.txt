@@ -1,12 +1,11 @@
 Hello {{object.get_full_name}},
 
-You modified your ICSM 2010 profile.
+You modified your CRiSIS 2011 profile.
 
-At http://icsm2010.upt.ro/registration you can do the following actions:
+At http://registration-crisis2011.cs.upt.ro you can do the following actions:
 
 - edit you registration information
-- select the events you want to attend and pay by Paypal or Bank transfer.
-- create a hotel reservation
+- pay by Paypal or Bank transfer.
 
 About you
 {% with object.about as a %}
@@ -31,9 +30,6 @@ Participant status
 {% with object.status as s %}
 {%if s.IEEE_member_number %}IEEE member number: {{s.IEEE_member_number}}{% endif %}
 {%if s.student %}Student: {{s.student}}{% endif %}
-{%if s.keynote_speaker %}Keynote speaker{% endif %}
-{%if s.tutorial_speaker %}Tutorial speaker{% endif %}
-{%if s.other %}Other: {{s.other}}{% endif %}
 {% endwith %}
 
 
