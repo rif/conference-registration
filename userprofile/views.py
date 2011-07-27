@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+S# -*- coding: utf-8 -*-
 from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render_to_response, redirect
@@ -40,9 +40,6 @@ def register(request):
             nu.email = aboutform.cleaned_data['email']
             nu.last_name = aboutform.cleaned_data['last_name']
             nu.save()
-            # create shopping cart
-            sc = ShoppingCart(user = nu)
-            sc.save()
             na = aboutform.save(commit=False)
             na.user = nu
             na.save()
