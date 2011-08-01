@@ -8,8 +8,3 @@ DATABASES = {
     }
 }
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'icsm2010info@gmail.com'
-EMAIL_HOST_PASSWORD = '1csmzoio'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
