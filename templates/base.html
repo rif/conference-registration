@@ -43,18 +43,18 @@
 	    <li><a href="http://crisis2011.cs.upt.ro/sponsors.html">Sponsors</a></li>
 	    <li><a href="http://crisis2011.cs.upt.ro/contacts.html">Contacts</a></li>
 	  </ul>
-	</div>
-      </div>
+	</div><!-- menu -->
+      </div><!-- leftcolumn -->
       <div id="middlecolumn">
 	<div class="tenpixpadder">
 	    	{% if user.is_authenticated %}
                 <div class="text-right">
                 {% if user.get_full_name%}<a class="button" href="{% url userprofile:home %}"><span class="user icon"></span>{{user.get_full_name}}</a>{% else %}{{user.username}}{% endif %} <a class="right button" href="{% url userprofile:logout %}">Log out</a>
-                </div>
+                </div> <!-- text-right -->
             {% endif %}
             {% block content %}{% endblock %}
-	</div>
-      </div>
+	</div><!-- tenpixpadder -->
+      </div><!-- middlecolumn -->
       <div id="rightcolumn">
 	<div class="cassette">
 	  <div class="title">
@@ -73,7 +73,7 @@
 	      Camera Ready Due:<br />
 	      <b>12 August 2011</b>
 	    </p>
-	  </div>
+	  </div><!-- text -->
 	  <div class="title">
 	    <b>Publications</b>
 	  </div>
@@ -86,8 +86,9 @@
 	  <div class="text">
 	    <img src="{{ STATIC_URL }}images/TCS_IEEECS.jpg" alt="tcs ieeecs" />
 	  </div>
-	</div>
-      </div>
+	</div><!-- cassette -->
+      </div><!-- rightcolumn -->
+    </div><!-- container -->
   </body>
   <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.6.2.min.js"></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.8.14.custom.min.js"></script>
