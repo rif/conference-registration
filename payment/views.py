@@ -25,26 +25,6 @@ def shop(request):
     }, context_instance=RequestContext(request))
 
 @user_passes_test(lambda u: u.is_authenticated() and not u.is_staff)
-def paypal(request):
-    user = request.user
-    paypal_list = []
-    for item in __get_items(user):
-        for count in range(item[1]):
-            paypal_list.append([item[0], item[2]])
-    return render_to_response('payment/paypal.html', {
-        'items': paypal_list,
-    }, context_instance=RequestContext(request))
-
-@user_passes_test(lambda u: u.is_authenticated() and not u.is_staff)
-def get_part_sum(request, item):
-    sc = request.user.shoppingcart
-    return HttpResponse(sc.get_part_sum(item))
-
-@user_passes_test(lambda u: u.is_authenticated() and not u.is_staff)
-def get_tot_sum(request):
-    sc = request.user.shoppingcart
-    return HttpResponse(sc.get_tot_sum())
-@user_passes_test(lambda u: u.is_authenticated() and not u.is_staff)
 def email(request):
     user = request.user
     category = user.status.get_payment_cathegory()
