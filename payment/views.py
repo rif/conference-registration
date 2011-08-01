@@ -7,12 +7,17 @@ from django.core.mail import EmailMessage
 from payment.models import PaymentPackage
 from datetime import datetime
 
+def __is_early():
+    early_end = datetime(2011, 8, 17)
+    return datetime.now() < early_end
+
+
 @user_passes_test(lambda u: u.is_authenticated() and not u.is_staff)
 def shop(request):
     user = request.user
     category = user.status.get_payment_cathegory()
-    early_end = datetime(2011, 8, 15)
-    is_early = datetime.now() < early_end
+    is_early = __is_early()
+    print is_early
     package = PaymentPackage.objects.get(code=category, early=is_early)
     return render_to_response('payment/shop.html', {
         'pacakge': package,
@@ -43,16 +48,16 @@ def get_tot_sum(request):
 def email(request):
     user = request.user
     category = user.status.get_payment_cathegory()
-    package = PaymentPackage.objects.get(code=category)
+    is_early = __is_early()
+    package = PaymentPackage.objects.get(code=category, early=is_early)
     email_body = render_to_response('payment/email.txt',
                     {'pacakge': package,
-                    'user': user,
-                    'items': [item for item in __get_items(user) if item[1] > 0]})
+                    'user': user})
     email_body = str(email_body).split("\n")
     email_body = "\n".join(email_body[1:])
-    email = EmailMessage(' [ICSM2010] Payment details', email_body, 'info@icsm2010.upt.ro',
-            [user.about.email], ['info@icsm2010.upt.ro'],
-            headers = {'Reply-To': 'info@icsm2010.upt.ro'})
+    email = EmailMessage(' [CRiSIS2011] Payment details', email_body, 'marius@cs.upt.ro',
+            [user.about.email], ['marius@cs.upt.ro'],
+            headers = {'Reply-To': 'marius@cs.upt.ro'})
     email.send(fail_silently=False)
     return HttpResponse("Mail sent succesfuly to %s!" % user.about.email)
 
