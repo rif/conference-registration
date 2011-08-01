@@ -4,8 +4,8 @@
 {% if user.is_staff %}
 <p>You are a staff member, no cancel for you! Please go <a href="{% url userprofile:home %}">Home</a></p>
 {% else %}
-<h1>You are about to cancel your registration to ICSM 2010!</h1>
-<p>This will delete every information about yourself as a ICSM 2010 participant and cancel your hotel reservation.</p>
+<h1>You are about to cancel your registration to CRiSIS 2011!</h1>
+<p>This will delete every information about yourself as a CRiSIS 2011 participant and cancel your hotel reservation.</p>
 <p>Are you sure you want to cancel your registration?</p>
 <a href="{% url userprofile:cancel-everything %}">Yes</a>&nbsp;&nbsp;<span style="font-size:200%; font-weight: bold;"><a href="{% url userprofile:home %}">No</a><span>
 {% endif %}

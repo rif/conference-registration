@@ -77,9 +77,9 @@ def __send_welcome_email(request, password):
     })
     email_body = str(email_body).split("\n")
     email_body = "\n".join(email_body[1:])
-    email = EmailMessage('Welcome to ICSM 2010', email_body, 'info@icsm2010.upt.ro',
-            [user.about.email], ['info@icsm2010.upt.ro'],
-            headers = {'Reply-To': 'info@icsm2010.upt.ro'})
+    email = EmailMessage('Welcome to CRiSIS 2011', email_body, 'crisis2011-info@cs.upt.ro',
+            [user.about.email], [' crisis2011-info@cs.upt.ro'],
+            headers = {'Reply-To': 'crisis2011-info@cs.upt.ro'})
     email.send(fail_silently=False)
 
 def __send_update_email(request):
@@ -89,9 +89,9 @@ def __send_update_email(request):
     })
     email_body = str(email_body).split("\n")
     email_body = "\n".join(email_body[1:])
-    email = EmailMessage('[ICSM 2010] Profile Update', email_body, 'info@icsm2010.upt.ro',
-            [user.about.email], ['info@icsm2010.upt.ro'],
-            headers = {'Reply-To': 'info@icsm2010.upt.ro'})
+    email = EmailMessage('[CRiSIS 2011] Profile Update', email_body, 'crisis2011-info@cs.upt.ro',
+            [user.about.email], ['crisis2011-info@cs.upt.ro'],
+            headers = {'Reply-To': 'crisis2011-info@cs.upt.ro'})
     email.send(fail_silently=False)
 
 @user_passes_test(lambda u: u.is_authenticated() and not u.is_staff)
@@ -144,59 +144,6 @@ def cancel_everything(request):
     logout(request)
     user.delete()
     return HttpResponse("We are sorry to see you go...")
-
-@user_passes_test(lambda u: u.is_staff)
-def statistics(request):
-    scs = ShoppingCart.objects.all()
-    if request.method == 'POST':
-        form = StatisticsForm(request.POST)
-        if form.is_valid():
-            clean_data = form.cleaned_data
-            if clean_data['icsm']:
-                scs = scs.filter(ICSM__gte=1)
-            if clean_data['promise']:
-                scs = scs.filter(PROMISE__gte=1)
-            if clean_data['wse']:
-                scs = scs.filter(WSE__gte=1)
-            if clean_data['scam']:
-                scs = scs.filter(SCAM__gte=1)
-            if clean_data['famoosr']:
-                scs = scs.filter(FAMOOSR__gte=1)
-            if clean_data['mesoa']:
-                scs = scs.filter(MESOA__gte=1)
-            if clean_data['tut1']:
-                scs = scs.filter(tutorial_refactoring_for_parallelism__gte=1)
-            if clean_data['tut2']:
-                scs = scs.filter(tutorial_migrating_software_testing_to_the_cloud__gte=1)
-            if clean_data['tut3']:
-                scs = scs.filter(tutorial_teaching_undergraduate_software_engineering__gte=1)
-            if clean_data['tut4']:
-                scs = scs.filter(tutorial_the_licensing_challenge__gte=1)
-            if clean_data['extra_ICSM_banquet']:
-                scs = scs.filter(extra_ICSM_banquet__gte=1)
-            if clean_data['extra_ICSM_reception']:
-                scs = scs.filter(extra_ICSM_reception__gte=1)
-            if clean_data['extra_ICSM_winetasting']:
-                scs = scs.filter(extra_ICSM_winetasting__gte=1)
-            if clean_data['extra_ICSM_proceedings']:
-                scs = scs.filter(extra_ICSM_proceedings__gte=1)
-            if clean_data['extra_PROMISE_SCAM_dinner']:
-                scs = scs.filter(extra_PROMISE_SCAM_dinner__gte=1)
-            if clean_data['extra_PROMISE_proceedings']:
-                scs = scs.filter(extra_PROMISE_proceedings__gte=1)
-            if clean_data['extra_SCAM_proceedings']:
-                scs = scs.filter(extra_SCAM_proceedings__gte=1)
-            if clean_data['extra_WSE_dinner_price']:
-                scs = scs.filter(extra_WSE_dinner_price__gte=1)
-            if clean_data['extra_WSE_proceedings']:
-                scs = scs.filter(extra_WSE_proceedings__gte=1)
-    else:
-        form = StatisticsForm()
-
-    return render_to_response('userprofile/statistics.html', {
-        'form': form,
-        'shoppingcarts': scs,
-    }, context_instance=RequestContext(request))
 
 @user_passes_test(lambda u: u.is_staff)
 def names(request):

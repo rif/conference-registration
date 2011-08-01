@@ -31,10 +31,6 @@
     {% if user.is_staff %}
         <li>Is member: {{s.is_member|yesno}}</li>
         <li>Payment cathegory: {{s.get_payment_cathegory}}</li>
-        <li>Has ICSM paper: {{object.shoppingcart.icsm_have_paper|yesno}}</li>
-        {% if object.shoppingcart.is_empty %}
-        <li class="errorlist">Empty shoppingcart!</li>
-        {% endif %}
     {% endif %}
 </ul>
 {% endwith %}

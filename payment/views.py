@@ -35,9 +35,9 @@ def email(request):
                     'user': user})
     email_body = str(email_body).split("\n")
     email_body = "\n".join(email_body[1:])
-    email = EmailMessage(' [CRiSIS2011] Payment details', email_body, 'marius@cs.upt.ro',
-            [user.about.email], ['marius@cs.upt.ro'],
-            headers = {'Reply-To': 'marius@cs.upt.ro'})
+    email = EmailMessage(' [CRiSIS2011] Payment details', email_body, 'crisis2011-info@cs.upt.ro',
+            [user.about.email], ['crisis2011-info@cs.upt.ro'],
+            headers = {'Reply-To': 'crisis2011-info@cs.upt.ro'})
     email.send(fail_silently=False)
     return HttpResponse("Mail sent succesfuly to %s!" % user.about.email)
 
