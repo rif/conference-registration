@@ -1,22 +1,17 @@
 Hello {{user.get_full_name}},
 
-You registered as a {{pacakge.name}} participant, and chose to pay your registration by bank transfer. So, here are the payment details:
+You registered as a {{ pacakge.get_code_display }} participant, and chose to pay your registration by bank transfer. So, here are the payment details:
 
-{% for item in items %}{{ item.0 }}                                  {{ item.1 }} x {{ item.2 }}
-{% endfor %}
-                * Total Amount: 	{{user.shoppingcart.get_tot_sum}} EUR
+                * Total Amount: 	{{ pacakge.conference_price }} EUR
 
 BANK Transfer
 
-Account holder: INSTITUTUL e-AUSTRIA TIMISOARA (represented by Prof. Dana Petcu)
+Account holder: INSTITUTUL e-AUSTRIA TIMISOARA
 Bank: RAIFFEISEN BANK
 Bank Address: Bv. Circumvalatiunii, 8-12, 300012 Timisoara, Romania
 SWIFT: RZBRROBU
 
 Account number (IBAN):
 EUR: RO73 RZBR 0000 0600 1239 2672
-USD: RO46 RZBR 0000 0600 1239 2673
-RON: RO60 RZBR 0000 0600 1215 6032
 
-Bank transfer should be operated without any charge for us and with mention of the participant's name to avoid any confusion. To get the early rate, bank transfers
-must be made before August 16.
+Bank transfer should be operated without any charge for us and with mention of the participant's name to avoid any confusion. To get the early rate, bank transfers must be made before August 17.

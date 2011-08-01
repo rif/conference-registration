@@ -37,8 +37,8 @@ LOGOUT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'icsm2010info@gmail.com'
-EMAIL_HOST_PASSWORD = '1csmzoio'
+EMAIL_HOST_USER = 'crisis2011info@gmail.com'
+EMAIL_HOST_PASSWORD = 'testus_cumulus'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
