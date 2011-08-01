@@ -14,10 +14,11 @@
     {% include "payment/paypal.html" %}
 </div>
 <div>
-    <a id="email" href="{% url payment:email %}"><img height="60px" src="{{ STATIC_URL }}images/pay_by_email.png" alt="Send payment details by email"></a>
-    <div class="info" id="email-response"></div>
+    <a id="email" href="{% url payment:email %}"><img height="60px" src="{{ STATIC_URL }}images/pay_by_email.png" alt="Send payment details by email"/></a>
+    <div class="info" id="email-response">
+      <img  src="{{ STATIC_URL }}images/ajax-loader.gif" alt="processing..."/>
+    </div>
 </div>
-
 
 <p class="note">Note: Independent of our will, paying via PayPal requires the creation of a PayPal account. However, even if you don't have a PayPal account, the overhead is minimal: it just requires you to provide a password and to push the "Agree and Continue" button. After that, you can immediately proceed with the payment; no other extra-effort is involved.</p>
 
