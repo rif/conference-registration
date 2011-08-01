@@ -37,7 +37,7 @@ class About(models.Model):
 
 class Accomodation(models.Model):
     user = models.OneToOneField(User, editable=False)
-    arrival_date = models.DateField(null=True, blank=True, help_text="Used for airport to venue place transportation and hotel booking. (Optional)")
+    arrival_date = models.DateField(null=True, blank=True, help_text="Optional")
     arrival_time = models.TimeField(null=True, blank=True, help_text="HH:MM (Optional)")
     departure_date = models.DateField(null=True, blank=True, help_text="Optional")
 
