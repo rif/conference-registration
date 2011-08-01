@@ -119,16 +119,10 @@ a.mmod, a.pmod{
 a.mmod:hover, a.pmod:hover {
     background: none;
 }
-#email-response {display: none; color: green;}
 .remarks {font-size: 70%;}
 .red {color: red;}
 .special_rate label {font-size: 90%; font-weight: normal;}
-#hotels-table th {
-border-top: 1px solid #C3D9FF;
-border-right: 1px solid #C3D9FF;
-border-left: 1px solid #C3D9FF;
-font-size: 80%;
-}
+
 #statistics-list {margin-top: 10px;}
 #stats-form input {width: 25%;}
 #stats-form label {width: 25%;}
@@ -140,4 +134,10 @@ font-size: 80%;
 
 #admin_panel li {
     display: inline;
+}
+
+#email-response {
+    display: none;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
