@@ -4,8 +4,8 @@ You modified your CRiSIS 2011 profile.
 
 At http://registration-crisis2011.cs.upt.ro you can do the following actions:
 
-- edit you registration information
-- pay by Paypal or Bank transfer.
+- edit your registration information
+- pay by credit card (via PayPal) or Bank transfer.
 
 About you
 {% with object.about as a %}
