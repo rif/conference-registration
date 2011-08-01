@@ -7,7 +7,6 @@
     <li>Tel: {{a.phone}} {% if a.fax %}Fax: {{a.fax}} {% endif %}</li>
     <li>Address: {{a.address}} {{a.posta_code}} {{a.get_country_display}}</li>
     <li>Vegetarian: {{a.vegetarian|yesno}}</li>
-    <li>Like Jogging: {{a.like_jogging|yesno}}</li>
     <li>Special needs: {{a.other_special_needs}}</li>
 </ul>
 {% endwith %}

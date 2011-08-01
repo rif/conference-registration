@@ -26,7 +26,6 @@ class About(models.Model):
     country = models.CharField(max_length=2, choices=COUNTRY_CHOICES)
     hide_email = models.BooleanField(help_text="I do NOT want my address distributed")
     vegetarian = models.BooleanField(help_text='Check this if you are a vegetarian. If you have any other food preferences, please write them in the "Other special needs" field below.')
-    like_jogging = models.BooleanField(help_text="I would like to get access to the university stadium for jogging")
     other_special_needs = models.TextField(null=True, blank=True, help_text="Please specify here any special needs that you might have concerning food (e.g. you are eating Halal or Kosher etc.) transportation, accommodation, or anything else that is in particular important for you. We will do our best to take into account all your special needs. (Optional)")
 
     def __unicode__(self):

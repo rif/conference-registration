@@ -18,7 +18,6 @@ Email: {{a.email}} hide: {{a.hide_email}}
 Tel: {{a.phone}} {% if a.fax %}Fax: {{a.fax}} {% endif %}
 Address: {{a.address}} {{a.posta_code}} {{a.get_country_display}}
 Vegetarian: {{a.vegetarian|yesno}}
-Like Jogging: {{a.like_jogging|yesno}}
 Special needs: {{a.other_special_needs}}
 {% endwith %}
 
