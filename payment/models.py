@@ -7,8 +7,8 @@ class PaymentPackage(models.Model):
     STATUS_CHOICES = (
            ('REG', 'Regular'),
            ('MBR', 'IEEE Member'),
-           ('SFT', 'Student Fulltime'),
-           ('SMB', 'Student Member')
+           ('SFT', 'Full-time Student'),
+           ('SMB', 'IEEE Student Member')
         )
     code = models.CharField(max_length=3, choices=STATUS_CHOICES)
     conference_price = models.IntegerField()
