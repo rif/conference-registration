@@ -141,3 +141,9 @@ a.mmod:hover, a.pmod:hover {
     font-size: 2em;
     margin-bottom: 20px;
 }
+
+#total-sum {
+    font-size: 1.7em;
+    font-weight: bold;
+    margin: 20px 0 20px 0;
+}

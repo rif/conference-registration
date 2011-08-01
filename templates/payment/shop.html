@@ -8,10 +8,10 @@
 {% endif %}
 <p>You registered as a {{ pacakge.get_code_display }} participant. Here is the price for this package:</p>
 
-<h2>{{ pacakge.conference_price }}EUR</h2>
+<div id="total-sum">{{ pacakge.conference_price }}EUR</div>
 
 <div id="paypal-div">
-    {% include "payment/paypal.html" %}
+    Credit card (through PayPal) {% include "payment/paypal.html" %}
 </div>
 <div>
     <a id="email" href="{% url payment:email %}"><img height="60px" src="{{ STATIC_URL }}images/pay_by_email.png" alt="Send payment details by email"/></a>
@@ -20,7 +20,13 @@
     </div>
 </div>
 
-<p class="note">Note: Independent of our will, paying via PayPal requires the creation of a PayPal account. However, even if you don't have a PayPal account, the overhead is minimal: it just requires you to provide a password and to push the "Agree and Continue" button. After that, you can immediately proceed with the payment; no other extra-effort is involved.</p>
+<p class="note">Note: The only way in which we can receive credit card payments is through
+PayPal. Even if you don't have a PayPal account, the overhead is minimal:
+in addition to the information which is required for the payment itself,
+you only need to provide a password and push the "Agree and Continue"
+button. After that, you can immediately proceed with the payment;
+no other extra effort is involved.
+</p>
 
 <p><a href="{% url userprofile:home %}">Home</a></p>
 {% endblock %}
