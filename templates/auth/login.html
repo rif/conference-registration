@@ -39,11 +39,13 @@
 including tutorials, participant kit, lunch and coffee breaks during
 the three conference breaks, and social events (including banquet).</p>
 
-<p align="center"><b>Early Registration Fees</b>
-  <br>(deadline: 17 August 2011)
+<p align="center">
+<b>Early Registration Fees</b><br/>
+(deadline: 17 August 2011)
 </p>
 <table align="center" cellspacing="20">
-  <tbody><tr align="center">
+  <tbody>
+    <tr align="center">
       <th>Regular</th>
       <th>IEEE Member</th>
       <th>Full-time Student</th>
@@ -57,11 +59,9 @@ the three conference breaks, and social events (including banquet).</p>
     </tr>
   </tbody>
 </table>
-
-</span>
-    {% else %}
-        <a class="button" href="{% url userprofile:home %}"><span class="user icon"></span>Edit your registration details</a>
-    {% endif %}
+{% else %}
+<a class="button" href="{% url userprofile:home %}"><span class="user icon"></span>Edit your registration details</a>
+{% endif %}
 {% endif %}
 {% endblock %}
 
