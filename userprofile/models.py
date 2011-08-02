@@ -53,7 +53,7 @@ class Status(models.Model):
     STUDENT_FULL_TIME = 'SFT'
     STUDENT_MEMBER = 'SMB'
     user = models.OneToOneField(User, editable=False)
-    payment_received = models.BooleanField(default=False)
+    payment_received = models.BooleanField(default=False, help_text="You can confirm multiple payments using the actions from the outside list")
     IEEE_member_number = models.CharField(max_length="8", null=True, blank=True, validators=[validators.RegexValidator("\d{8}", "Please provide the 8 digits IEEE number.")], help_text="While no verification occurs at this time, we will check manually your IEEE number.")
     student = models.BooleanField("full-time student", help_text="I am a full-time student and will provide documentary proof of that. To get the student reduced fee, please send proof of full-time student status (e.g. copy of student card) to crisis2011-info@cs.upt.ro or by fax: +40 256 244834.")
 
