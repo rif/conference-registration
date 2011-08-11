@@ -15,7 +15,7 @@ def push():
     local('hg push')
 
 @task
-@hosts('rif@loose')
+@hosts('rif@loose.upt.ro')
 def deploy():
     'triggers hg pul on the server'
     print(green('deploying...'))
@@ -26,7 +26,7 @@ def deploy():
 
 
 @task
-@hosts('loose')
+@hosts('loose.upt.ro')
 def reload():
     'fires an apache graceful reload'
     print(green('reloading...'))
