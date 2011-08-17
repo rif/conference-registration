@@ -26,7 +26,7 @@ def deploy():
 
 
 @task
-@hosts('loose.upt.ro')
+@hosts('rif@loose.upt.ro')
 def reload():
     'fires an apache graceful reload'
     print(green('reloading...'))

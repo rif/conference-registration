@@ -8,7 +8,7 @@ from payment.models import PaymentPackage
 from datetime import datetime
 
 def __is_early():
-    early_end = datetime(2011, 8, 18)
+    early_end = datetime(2011, 8, 19)
     return datetime.now() < early_end
 
 
